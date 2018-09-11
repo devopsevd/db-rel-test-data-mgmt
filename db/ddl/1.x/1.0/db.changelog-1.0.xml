@@ -20,14 +20,14 @@
 			newColumnName="username" />
 
 		<createTable tableName="t_role">
-			<column name="name" type="varchar2(50)">
+			<column name="name" type="varchar(50)">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="description" type="varchar2(250)" />
+			<column name="description" type="varchar(250)" />
 		</createTable>
 
 		<addColumn tableName="t_user">
-			<column name="role" type="varchar2(50)">
+			<column name="role" type="varchar(50)">
 				<constraints nullable="false" />
 			</column>
 		</addColumn>
