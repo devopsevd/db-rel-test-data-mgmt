@@ -27,9 +27,12 @@ public class TestWithLiquibase {
 	@BeforeClass
 	public static void createTestData() throws SQLException,
 			ClassNotFoundException, LiquibaseException {
-		Class.forName("org.h2.Driver");
-		conn = DriverManager.getConnection("jdbc:h2:liquibase-sample", "sa",
-				"sa");
+		//Class.forName("org.h2.Driver");
+		//conn = DriverManager.getConnection("jdbc:h2:liquibase-sample", "sa",
+		//		"sa");
+		Class.forName("org.postgresql.Driver");
+		conn = DriverManager.getConnection("jdbc:h2://localhost:5432", "demo",
+				"demo_pass");
 
 		Database database = DatabaseFactory.getInstance()
 				.findCorrectDatabaseImplementation(new JdbcConnection(conn));
