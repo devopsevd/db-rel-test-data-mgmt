@@ -4,6 +4,7 @@
 
 	<changeSet id="testdata" author="bar">
 		<loadData tableName="user_info" file="db/testdata/user_info.csv">
+			<column name="user_id" type="NUMERIC" />
 			<column name="first_name" type="STRING" />
 			<column name="last_name" type="STRING" />
       <column name="primary_email" type="STRING" />
