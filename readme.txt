@@ -11,6 +11,7 @@
 3. Create testdata:
 
 	mvn -Dliquibase.changeLogFile=db/testdata/db.testdata.xml liquibase:update
+	mvn -Dliquibase.changeLogFile=db/testdata/userinfo.testdata.xml liquibase:update
 
 	
 4. Remove testdata
