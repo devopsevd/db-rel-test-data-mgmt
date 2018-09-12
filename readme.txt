@@ -17,4 +17,5 @@
 4. Remove testdata
 
 	mvn -Dliquibase.changeLogFile=db/testdata/db.testdata.xml -Dliquibase.rollbackCount=1000 liquibase:rollback
+	mvn -Dliquibase.changeLogFile=db/testdata/userinfo.testdata.xml -Dliquibase.rollbackCount=1000 liquibase:rollback
 	
