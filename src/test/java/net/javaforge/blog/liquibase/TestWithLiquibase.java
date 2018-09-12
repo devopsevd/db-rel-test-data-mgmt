@@ -37,7 +37,9 @@ public class TestWithLiquibase {
 		Database database = DatabaseFactory.getInstance()
 				.findCorrectDatabaseImplementation(new JdbcConnection(conn));
 
-		liquibase = new Liquibase("db/testdata/db.testdata.xml",
+		//liquibase = new Liquibase("db/testdata/db.testdata.xml",
+		//		new FileSystemResourceAccessor(), database);
+		liquibase = new Liquibase("db/testdata/userinfo.testdata.xml",
 				new FileSystemResourceAccessor(), database);
 		liquibase.update(null);
 
@@ -56,11 +58,11 @@ public class TestWithLiquibase {
 		try {
 
 			stmt = conn
-					.prepareStatement("select count(*) as numberOfUsers from t_user");
+					.prepareStatement("select count(*) as numberOfUsers from user_info");
 			rs = stmt.executeQuery();
 			rs.next();
 			int numberOfUsers = rs.getInt("numberOfUsers");
-			Assert.assertEquals(3, numberOfUsers);
+			Assert.assertEquals(1, numberOfUsers);
 
 		} finally {
 			rs.close();
@@ -68,24 +70,28 @@ public class TestWithLiquibase {
 		}
 	}
 
-	@Test
-	public void testRoles() throws SQLException {
-
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		try {
-
-			stmt = conn
-					.prepareStatement("select count(*) as numberOfRoles from t_role");
-			rs = stmt.executeQuery();
-			rs.next();
-			int numberOfUsers = rs.getInt("numberOfRoles");
-			Assert.assertEquals(3, numberOfUsers);
-
-		} finally {
-			rs.close();
-			stmt.close();
-		}
-	}
-
+	
+	//
+	//@Test
+	//public void testRoles() throws SQLException {
+//
+	//	PreparedStatement stmt = null;
+//		ResultSet rs = null;
+//		try {
+//
+//			stmt = conn
+//					.prepareStatement("select count(*) as numberOfRoles from t_role");
+//			rs = stmt.executeQuery();
+//			rs.next();
+//			int numberOfUsers = rs.getInt("numberOfRoles");
+//			Assert.assertEquals(3, numberOfUsers);
+//
+//		} finally {
+//			rs.close();
+//			stmt.close();
+//		}
+//	}
+//
+	
+	/*  ----*/	
 }
