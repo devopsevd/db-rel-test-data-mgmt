@@ -5,7 +5,7 @@
 	<changeSet id="testdata_cp" author="bar">
 		<loadData tableName="communication_pref" file="db/testdata/communication_pref.csv">
 			<column name="user_id" type="NUMERIC" />
-      <column name="communication_id" type="STRING" />
+      			<column name="communication_id" type="STRING" />
 		</loadData>
 		<rollback>
 			<delete tableName="communication_pref" />
