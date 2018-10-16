@@ -31,7 +31,7 @@ public class TestWithLiquibase {
 		//conn = DriverManager.getConnection("jdbc:h2:liquibase-sample", "sa",
 		//		"sa");
 		Class.forName("org.postgresql.Driver");
-		conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sboot_demo", "demo",
+		conn = DriverManager.getConnection("jdbc:postgresql://10.144.2.14:5432/sboot_demo", "demo",
 				"demo_pass");
 
 		Database database = DatabaseFactory.getInstance()
