@@ -1,2 +1,5 @@
 user_id,communication_id
-1,john@test.com
+1,john@doe.com
+2,jane@doe.com
+3,jill@doe.com
+4,jack@doe.com
